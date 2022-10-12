@@ -1,0 +1,100 @@
+<head>
+<style>
+body{
+font-family: Arial, Helvetica, sans-serif;
+}
+table {
+
+  border-collapse: collapse;
+  width: 80%;
+  margin-left:10%;
+  margin-right:20%;
+
+}
+th{
+background-color: rgb(0,0,0);
+color:white;}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.column {
+
+  float: left;
+  padding: 5px;
+}
+#large{position: absolute;
+  top:50px;
+  right: 90px;
+  width: 70px;
+  padding: 10px;}
+#small{
+padding-left:40px;}
+
+.row{
+width:100%;
+
+}
+
+
+.content {
+
+  margin: auto;
+  background: white;
+  padding: 10px;
+}
+footer {
+  text-align: left;
+  margin-left:10%;
+
+  color: black;
+}
+#total{
+  border:1px solid red;
+  color:red;
+}
+</style>
+</head>
+<body>
+<center class="content">
+
+<div class="row">
+
+</div>
+  <br>
+
+<table>
+  <tr>
+    <th colspan="4">Members of Car Wash N Detailing</th>
+
+  </tr>
+    <tr>
+    <th>Vehicle Number</th>
+    <th>Left With Amount</th>
+    <th>Start of Membership</th>
+    <th>End Date</th>
+
+
+
+  </tr>
+
+    {% for key,value in data.items() %}
+    <TR>
+    <TD class="c2">{{key}}</TD>
+        {% for k,v in value.items() %}
+       <TD class="c2">{{v}}</TD>
+       {% endfor %}
+    </TR>
+
+    {% endfor %}
+</table>
+
+
+</body>
